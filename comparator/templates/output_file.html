@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  
+  <div style="margin:10px;">
+    
+    <h1 style="color:aliceblue">YOUR FILE HAS BEEN CONVERTED</h1>
+    <p style="color:aliceblue;font-weight:bolder">-------------------------------------------------------------------------------------------------------------------</p>
+    
+    
+  </div>
+  <a href= {{ path }} class="btn btn-primary btn-sm" target="_blank" style="background-color: black;border:2px solid aqua;font-weight:bold; margin:10px" onmouseover="onhover(this)" onmouseout="normal(this)" download="mytextdocument">
+    CLICK HERE TO DOWNLOAD
+  </a>
+  </div>
+  
+
+{% endblock %}

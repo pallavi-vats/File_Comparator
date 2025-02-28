@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <h1>SELECT THE FILE CONVERSION</h1>
+  <p style="color:aliceblue;font-weight:bolder">-------------------------------------------------------------------------------------------------------------------</p>
+  <div >
+    <a href="pdf2doc"  >
+        <img alt="Qries" src="{% static 'image/PDF-to-Word.png' %}" width="300" height="200" onmouseover="onimg(this)" onmouseout="normal(this)" style="margin-left: 10px;"
+       >
+     </a>
+    <a href="doc2pdf">
+        <img alt="Qries" src="{% static 'image/Word-to-PDF.png' %}" width="300" height="200" onmouseover="onimg(this)" onmouseout="normal(this)" style="margin-left: 70px;"
+       >
+     </a>
+  </div>
+  <div >
+    <a href="pdf2doc" style="color:aliceblue;text-decoration: none;font-weight:bold" >
+        PDF TO WORD
+     </a>
+
+    <a href="doc2pdf" style="margin-left: 250px;color:aliceblue;text-decoration: none;font-weight:bold">
+      WORD TO PDF
+     </a>
+  </div>
+
+<script>
+  function onimg(x) {
+    x.style.backgroundColor = "#454545";
+    x.style.borderRadius = "5px"
+    
+    
+  }
+  
+function normal(x) {
+    x.style.backgroundColor = "black";
+    
+    
+  }
+</script>
+  
+{% endblock %}

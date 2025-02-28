@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/app2.css' %}">
+{% for message in messages %}
+    
+    <div class="alert alert-success">
+        <a class="close" href="#" data-dismiss="alert">×</a>
+           <h5>{{ message }}</h5>
+
+    </div>
+
+{% endfor %}
+  <h2>PDF TO WORD CONVERTOR</h2>
+  <div class="line" style="width: 95%;height: 15px;border-bottom: 1px solid white;  position: absolute;"></div>
+  <br>
+  <div class="form-group">
+    <br>
+  <form method="post" enctype="multipart/form-data" style="padding-left :0%">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <br>
+    <button id ="compare" type="submit" class="btn btn-primary" style="background-color: black;border:2px solid aqua;font-weight:bold" onmouseover="onhover(this)" onmouseout="normal(this)">CONVERT</button>
+  </form>
+</div>
+<script>
+    
+    const collection = document.getElementById("id_pdf_file");
+    collection.style.border = "2px solid aqua";
+    collection.style.margin = "5px"
+    collection.style.borderRadius = "5px"
+    
+
+  function onhover(x) {
+    x.style.backgroundColor = "aqua"
+    x.style.color = "black"
+    
+  }
+  
+  function normal(x) {
+    x.style.backgroundColor = "black";
+    x.style.color = "aliceblue"
+    
+  }
+
+</script>
+
+{% endblock %}
