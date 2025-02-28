@@ -1,0 +1,51 @@
+body {
+   background-color: black; 
+}
+
+#a { 
+   border:1px solid aqua;
+   border-radius: 5px;
+   margin-top: 20px;
+   margin-left: 10px;
+   margin-right: 10px;
+   padding-left: 30%;
+   
+   
+}
+#a div div ul li{
+   padding-left:30px;
+   padding-right:30px;
+   
+}
+
+#a div div ul li a{
+   color: aliceblue;
+   font-weight:initial;
+   border-radius: 5px;
+   text-align: center;
+   font-weight: 500;
+}
+
+#a div div ul li a :hover{
+   background-color: yellow;
+   
+}
+
+#main {
+   color: aliceblue;
+   
+   
+}
+
+.card-body {
+   background-color: black;
+   border:2px solid aqua;
+   border-radius: "5px";
+   text-align: center;
+   
+   
+}
+
+a:hover .nav-link {
+ color: blue;
+}

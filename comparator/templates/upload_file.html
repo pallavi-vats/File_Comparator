@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/app2.css' %}">
+  <h2>FILE COMPARE</h2>
+  <div class="line" style="width: 95%;height: 15px;border-bottom: 1px solid white;  position: absolute;"></div>
+  <br>
+  <div class="form-group">
+    <br>
+  <form method="post" enctype="multipart/form-data" style="padding-left :0%">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <br>
+    <button id ="compare" type="submit" class="btn btn-primary" style="background-color: black;border:2px solid aqua;font-weight:bold" onmouseover="onhover(this)" onmouseout="normal(this)">COMPARE</button>
+  </form>
+</div>
+<script>
+  const collection = document.getElementById("id_generic_file");
+  collection.style.border = "2px solid aqua";
+  collection.style.margin = "5px"
+  collection.style.borderRadius = "5px"
+
+  const collection2 = document.getElementById("id_file_to_compare")
+  collection2.style.border = "2px solid aqua";
+  collection2.style.margin = "5px"
+  collection2.style.borderRadius = "5px"
+
+  const for_label = document.getElementsByClassName("control-label requiredField");
+  for_label[0].style.fontWeight = "Bold"
+  for_label[0].style.margin = "10px"
+  for_label[1].style.fontWeight = "Bold"
+  for_label[1].style.margin = "10px"
+
+  function onhover(x) {
+    x.style.backgroundColor = "aqua"
+    x.style.color = "black"
+    
+  }
+  
+  function normal(x) {
+    x.style.backgroundColor = "black";
+    x.style.color = "aliceblue"
+    
+  }
+
+</script>
+
+{% endblock %}

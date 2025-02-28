@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  
+  <div style="margin:10px;">
+    
+    <h1 style="color:aliceblue">DIFFERENCES NOTICED IN FILE</h1>
+    <p style="color:aliceblue;font-weight:bolder">-------------------------------------------------------------------------------------------------------------------</p>
+    <br>
+    <div  style="color:aliceblue;text-align:left;padding-left:5%">
+    {% for val in final_output %}
+        {{val}}
+        <br>
+    {% endfor %}
+  </div>
+ 
+  </div>
+  <a href= {{ path }} class="btn btn-primary btn-sm" target="_blank" style="background-color: black;border:2px solid aqua;font-weight:bold; margin:10px" onmouseover="onhover(this)" onmouseout="normal(this)" download="mytextdocument">
+    DOWNLOAD
+  </a>
+
+{% endblock %}
